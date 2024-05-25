@@ -1,0 +1,45 @@
+Step -1 :Create MVC file structure using Node Express framework
+
+Step 2: Database
+
+ - Installing the CLI  
+   npm install sequelize-cli
+
+- Project bootstrapping
+  This will create following folders
+   - config, contains config file, which tells CLI how to connect with database
+   - models, contains all models for your project
+   - migrations, contains all migration files
+   - seeders, contains all seed files
+
+Step 3 : Database Configuration  
+    - open default config file config/config.json
+        "development": {
+            "username": "root",
+            "password": null,
+            "database": "bigoh",
+            "host": "127.0.0.1",
+            "dialect": "mysql"
+        },
+
+Also create database name on local sql server 
+
+Step 4 : Creating the Model 
+
+   -  Let's create a model named User
+   -  npx sequelize-cli model:generate --name User --attributes title:string,name:string,email:string,phone:string,isGraduate:boolean
+
+Step 5: Running Migrations for Create Model 
+
+ - npx sequelize-cli db:migrate
+
+ Our API route 
+
+ Type Post :
+  http://localhost:3000/auth/api/create-form
+
+Type Post :
+ http://localhost:3000/auth/api/fill-form/:user
+
+Type Get 
+ http://localhost:3000/api/user/list
